@@ -1,0 +1,23 @@
+<%- include("./partials/header") %>
+
+
+<form action="/clucks" method="POST">
+    <div class="card w-50">
+
+        <div class="card-body">
+            <label for="content">Content</label>
+            <textarea class="form-control" name='content' aria-label="With textarea" rows='5' placeholder="Whatchoo cluckin' about?"></textarea>
+        </div>
+        <div></div>
+
+        <div class="card-body">
+            <label for="image_url">Image URL</label>
+            <input name="image_url" type="text" class="form-control" id="image_url" placeholder="https://i.imgur.com/qM6KaEy.gifv">
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-success" >Cluck!</button>
+</form>
+
+
+<%- include("./partials/footer") %>

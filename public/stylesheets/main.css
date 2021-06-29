@@ -1,0 +1,9 @@
+a.nav-link {
+    color: white;
+    font-weight: bolder;
+},
+span.navbar-text, #username {
+    color : rgb(55, 55, 55);
+    font-weight: bolder;
+    
+}

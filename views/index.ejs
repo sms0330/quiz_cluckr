@@ -1,0 +1,30 @@
+<%- include("./partials/header") %>
+
+<% for (let cluck of clucks) { %>
+    <div class="card" style="width: 18erm;">
+    </span>
+        <div class="card-body">
+            <h5 class="class-title"><img src="/images/chicken-emoji-by-twitter.png" style="height:50px; width:50px"><a href="/clucks/<%= cluck.id %>"><%= cluck.username %> • <%= cluck.created_at %></a></h5>
+            <p class="card-text"><%= cluck.content %></p>
+            <div class="card" style="width: 18erm;">
+                <% if (cluck.image_url) { %>
+                    <img
+                      class='card-img-top'
+                      src='<%= cluck.image_url %>'
+                      alt='cluck image'
+                    >
+                  <% } %>
+                <!-- <img src="<%= cluck.image_url %>" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                </div>
+            </div>
+            <form action="/clucks/<%= cluck.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="submit" class="btn btn-danger" value="Delete" />
+            </form>
+        </div>
+    </div>
+
+<% } %>
+
+<%- include("./partials/footer") %>

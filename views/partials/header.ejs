@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Express Cluckr</title>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+                <a class="nav-link"  href="/clucks"><img src="/images/rooster-emoji-by-twitter.png" style="height:50px; width:50px"></a>
+            <button class="btn btn-secondary type="button>
+                <a class="nav-link"  href="/clucks/new">Clucks!</a>
+            </button>
+        </form>
+
+        <% if (username) { %>
+            <span class="navbar-text" id="username">
+                Logged in as: <%= username %> 
+            </span>
+            <form action="/sign_out" method="POST">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="submit" class="btn btn-danger" value="Sign Out" />
+            </form>
+        <% } else { %>
+            <form action="/sign_in" method="POST">
+                <input type="text" name="username" />
+                <input type="submit" class="btn btn-success" value="Sign In" />
+            </form>
+        <% } %>
+    </nav>
+<div class="container">
