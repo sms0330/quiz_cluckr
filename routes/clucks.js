@@ -14,7 +14,8 @@ function redirectToSignIn(req, res, next) {
 }
 
 router.get('/', (req, res) => {
-  knex.index().then(data => {
+  knex.index().orderBy("created_at", "desc")
+  .then(data => {
     let output = [];
     data.forEach((item)=>{
       if(item.created_at){
