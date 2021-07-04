@@ -1,0 +1,17 @@
+<%- include("./partials/header") %>
+
+<div class="card" style="width: 18erm;">
+    <% if (cluck.image_url) { %>
+        <img
+          class='card-img-top'
+          src='<%= cluck.image_url %>'
+          alt='cluck image'
+        >
+      <% } %>
+    <div class="card-body">
+        <h5 class="card-title"><%= cluck.username %></h5>
+        <p class="card-text"><%= cluck.content %></p>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
